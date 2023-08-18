@@ -1,0 +1,39 @@
+.PageDescription {
+  padding: 20px 0 40px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.PageDescription h1 {
+  font-size: 40px;
+  font-family: 'Borel', cursive;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: #212738;
+}
+
+.Divider {
+  height: 5px;
+  width: 50px;
+  background: #744253;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+
+@media (max-width: 768px) {
+
+  .PageDescription h1 {
+    font-size: 30px;
+    font-family: 'Borel', cursive;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: #212738;
+    text-align: center;
+  }
+
+
+
+}
