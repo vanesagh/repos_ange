@@ -46,12 +46,14 @@ export default function RepoNavBar({ }) {
                     <Button
                         onClick={() => router.push('/listaprecios')}
                         sx={{ my: 2, color: '#f8c630', fontFamily: 'Borel', fontSize: '18px', }}
+                        data-testid="desktop-prices-button"
                     >Precios</Button>
                 </Box>
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, textAlign: 'center', margin: '0', paddingTop: '0' }} >
                     <IconButton
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
+                        aria-label='open-menu'
                         onClick={handleOpenNavMenu}
                     >
                         <MenuIcon fontSize="large" sx={{ mr: 1, color: '#f8c630' }} />
@@ -72,6 +74,7 @@ export default function RepoNavBar({ }) {
                     >Repostería Ángeles</Typography>
                     <Menu
                         id="menu-appbar"
+                        data-testid="menu-appbar"
                         anchorEl={anchorElNav}
                         anchorOrigin={{
                             vertical: 'bottom',
@@ -92,7 +95,10 @@ export default function RepoNavBar({ }) {
 
 
                     >
-                        <MenuItem sx={{ backgroundColor: '#744253', margin: '0', padding: '0' }}>
+                        <MenuItem
+                            sx={{ backgroundColor: '#744253', margin: '0', padding: '0' }}
+                            data-testid='menu-item'
+                        >
                             <Typography
                                 textAlign="center"
                                 component="a"
@@ -101,6 +107,7 @@ export default function RepoNavBar({ }) {
                                 sx={{
                                     color: '#f8c630', backgroundColor: '#744253', padding: '20px 10px', margin: '0',
                                 }}
+                                data-testid="mobile-prices-button"
                             >Precios</Typography>
                         </MenuItem>
 
