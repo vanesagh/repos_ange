@@ -26,6 +26,7 @@ const ResponsiveTableContainer = styled(TableContainer)(({ theme }) => ({
 function Row(props) {
     const { product } = props;
     const [open, setOpen] = useState(false);
+    console.log(`Rendering Row for product id: ${product.id}`); // Debug output
 
     return (
         <>
@@ -35,7 +36,7 @@ function Row(props) {
             >
                 <TableCell>
                     <IconButton
-                        aria-label="expand row"
+                        aria-label={"expand row-" + product.id}
                         size="small"
                         onClick={() => setOpen(!open)}
                     >
