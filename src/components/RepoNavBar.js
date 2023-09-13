@@ -1,10 +1,10 @@
-import { Container, Toolbar, Typography, Box, Menu, MenuItem, Button, IconButton } from '@mui/material';
+import { Toolbar, Typography, Box, Menu, MenuItem, Button, IconButton } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import BakeryDiningIcon from '@mui/icons-material/BakeryDining';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { styled } from '@mui/system';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 
@@ -13,12 +13,14 @@ export default function RepoNavBar({ }) {
     const router = useRouter();
     const [anchorElNav, setAnchorElNav] = useState(null);
     const open = Boolean(anchorElNav);
+    const isMobile = useMediaQuery('(max-width: 768px)');
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     }
 
     const handleCloseNavMenu = () => {
+        console.log("close");
         setAnchorElNav(null);
     }
 
@@ -49,7 +51,7 @@ export default function RepoNavBar({ }) {
                         data-testid="desktop-prices-button"
                     >Precios</Button>
                 </Box>
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, textAlign: 'center', margin: '0', paddingTop: '0' }} >
+                {isMobile && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, textAlign: 'center', margin: '0', paddingTop: '0' }} >
                     <IconButton
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
@@ -113,7 +115,7 @@ export default function RepoNavBar({ }) {
 
                     </Menu>
 
-                </Box>
+                </Box>}
             </Toolbar>
 
 
