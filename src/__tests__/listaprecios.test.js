@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import PriceList, { getStaticProps } from '../listaprecios';
+import PriceList from '../pages/listaprecios';
+import { getStaticProps } from '../pages/listaprecios';
 import { getProducts } from "@/api/products";
 
 
@@ -16,7 +17,7 @@ const fakeProducts = [
     { id: 2, name: "Product 2", price: 100, presentation: { name: 'Pieza' }, description: " description 2" },
     { id: 3, name: "Product 3", price: 120.00, presentation: { name: 'Paquete' }, description: " description 3" }
 ];
-jest.mock('../../api/products', () => ({
+jest.mock('../api/products', () => ({
     getProducts: jest.fn(),
 }));
 
