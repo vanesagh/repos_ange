@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 export const getProducts = async () => {
     try {
         const client = new ApolloClient({
-            uri: 'https://repoange-api.onrender.com/graphql',
+            uri: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
             cache: new InMemoryCache(),
         });
 
