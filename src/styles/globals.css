@@ -12,6 +12,20 @@
 
 }
 
+.MuiImageListItemBar-title {
+  padding-top: 5px;
+  font-size: 18px;
+  color: var(--color-letter-navbar);
+
+}
+
+.MuiImageListItemBar-subtitle {
+  padding-top: 5px;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--color-letter-navbar);
+}
+
 
 
 
