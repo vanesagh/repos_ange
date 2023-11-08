@@ -46,10 +46,16 @@ export default function RepoNavBar({ }) {
                     REPOSTERÍA ÁNGELES</Typography>
                 <Box sx={{ marginLeft: 'auto', display: { xs: 'none', md: 'flex' } }}>
                     <Button
+                        onClick={() => router.push('/productos')}
+                        sx={{ my: 2, color: '#f8c630', fontFamily: 'Borel', fontSize: '18px', }}
+                        data-testid="desktop-products-button"
+                    >Productos</Button>
+                    <Button
                         onClick={() => router.push('/listaprecios')}
                         sx={{ my: 2, color: '#f8c630', fontFamily: 'Borel', fontSize: '18px', }}
                         data-testid="desktop-prices-button"
                     >Precios</Button>
+
                 </Box>
                 {isMobile && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, textAlign: 'center', margin: '0', paddingTop: '0' }} >
                     <IconButton
@@ -97,6 +103,22 @@ export default function RepoNavBar({ }) {
 
 
                     >
+                        <MenuItem
+                            sx={{ backgroundColor: '#744253', margin: '0', padding: '0' }}
+                            data-testid='menu-item'
+                        >
+                            <Typography
+                                textAlign="center"
+                                component="a"
+                                href="#"
+                                onClick={() => router.push('/productos')}
+                                sx={{
+                                    color: '#f8c630', backgroundColor: '#744253', padding: '20px 10px', margin: '0',
+                                }}
+                                data-testid="mobile-products-button"
+                            >Productos</Typography>
+                        </MenuItem>
+
                         <MenuItem
                             sx={{ backgroundColor: '#744253', margin: '0', padding: '0' }}
                             data-testid='menu-item'

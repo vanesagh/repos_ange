@@ -94,10 +94,13 @@ test('Clicking Menu button for mobile', async () => {
     userEvent.click(menuButton);
 
     await waitFor(async () => {
-        const menuItem = screen.getByTestId('menu-item');
-        expect(menuItem).toBeVisible();
+        const menuItem = await screen.findAllByTestId('menu-item');
+        //console.log(menuItem.length)
+        expect(menuItem.length).toBe(2);
         const mobilePricesButton = screen.getByTestId('mobile-prices-button');
         expect(mobilePricesButton).toBeInTheDocument();
+        const mobileProductsButton = screen.getByTestId('mobile-products-button');
+        expect(mobileProductsButton).toBeInTheDocument();
         // 'navigates to "listaprecios" page on button click'
 
         fireEvent.click(mobilePricesButton);
