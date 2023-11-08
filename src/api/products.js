@@ -18,6 +18,7 @@ export const getProducts = async () => {
                 presentation {
                     name
                 }
+                imageUrl
                 
               }
             }
