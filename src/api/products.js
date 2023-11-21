@@ -19,7 +19,9 @@ export const getProducts = async () => {
                     name
                 }
                 imageUrl
-                
+                category{
+                    name
+                }
               }
             }
             `

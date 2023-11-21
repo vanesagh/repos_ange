@@ -8,8 +8,17 @@
 }
 
 .MuiTypography-root {
-  font-family: var(--font-family);
+  font-family: var(--color-letter-navbar);
 
+
+}
+
+.MuiListSubheader-root {
+  color: var(--color-letter-navbar);
+  background-color: var(--navbar-color);
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .MuiImageListItemBar-title {

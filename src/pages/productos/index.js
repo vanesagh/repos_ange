@@ -20,9 +20,26 @@ export default function Products({ products }) {
 
 export async function getStaticProps() {
     const data = await getProducts();
+
+    const groupedProducts = data.allProducts.reduce((acc, product) => {
+        const categoryName = product.category.name;
+        // Create an array for the category if it doesn't exist
+        if (!acc[categoryName]) {
+            acc[categoryName] = [];
+        }
+
+        // Add the item to the category
+        acc[categoryName].push(product);
+        return acc;
+
+
+    }, {});
+    //console.log(groupedProducts);
+
+
     return {
         props: {
-            products: data.allProducts
+            products: groupedProducts
         }
 
     }
